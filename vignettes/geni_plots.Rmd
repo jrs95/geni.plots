@@ -47,10 +47,10 @@ The package contains formatted test data downloaded from FinnGen r9 ([1:15442697
 * `geni_test_phewas`- a `data.frame` of PheWAS results for rs from FinnGen r9 ([1:154426970-A-C](https://r9.finngen.fi/variant/1:154454494-A-C)). A description of this data can be viewed using `help(geni_test_phewas)`.  
 * `geni_test_region`- a `list` containing:
   * `assoc` - a `data.frame` of results from a GWAS of interleukin-6 levels for the GRCh37 region 1:154301970-154551970 ([GCST90274815](https://www.ebi.ac.uk/gwas/studies/GCST90274815)). The genomic coordinates used are GRCh37. A description of this data can be viewed using `help(geni_test_region)`.  
-  * `corr` - a `matrix` of correlation statsitics for the markers in `assoc` using the European samples from [1000 Genomes Phase 3](https://www.internationalgenome.org/). The genomic coordinates used are GRCh37.  
+  * `corr` - a `matrix` of correlation statistics for the markers in `assoc` using the European samples from [1000 Genomes Phase 3](https://www.internationalgenome.org/). The genomic coordinates used are GRCh37.  
 * `geni_test_stack_region`- a `list` containing:
-  * `assoc` - a `data.frame` of results from GWAS studies on interleukin-6 and interleukin 6 recepter levels for the GRCh37 region 1:154301970-154551970 ([GCST90274815](https://www.ebi.ac.uk/gwas/studies/GCST90274815) and [GCST90088597](https://www.ebi.ac.uk/gwas/studies/GCST90088597)). The genomic coordinates used are GRCh37. A description of this data can be viewed using `help(geni_test_region)`.  
-  * `corr` - a `matrix` of correlation statsitics for the markers in `assoc` using the European samples from [1000 Genomes Phase 3](https://www.internationalgenome.org/). The genomic coordinates used are GRCh37.  
+  * `assoc` - a `data.frame` of results from GWAS studies on interleukin-6 and interleukin 6 receptor levels for the GRCh37 region 1:154301970-154551970 ([GCST90274815](https://www.ebi.ac.uk/gwas/studies/GCST90274815) and [GCST90088597](https://www.ebi.ac.uk/gwas/studies/GCST90088597)). The genomic coordinates used are GRCh37. A description of this data can be viewed using `help(geni_test_region)`.  
+  * `corr` - a `matrix` of correlation statistics for the markers in `assoc` using the European samples from [1000 Genomes Phase 3](https://www.internationalgenome.org/). The genomic coordinates used are GRCh37.  
 
 # Plots {.tabset .tabset-fade}
 
