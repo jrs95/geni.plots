@@ -1,0 +1,144 @@
+---
+title: "GENI plots"
+package: geni (version `r packageVersion('geni.plots')`)
+vignette: >
+    %\VignetteIndexEntry{geni.plots}
+    %\VignetteEngine{knitr::rmarkdown}
+    %\VignetteEncoding{UTF-8}
+---
+
+```{r knitr, include = FALSE}
+knitr::opts_chunk$set(
+  collapse = TRUE,
+  comment = "#>"
+)
+```
+
+# Overview
+
+The `geni.plots` R package is a tool for visualising results from genome-wide association studies (GWAS) and phenome-wide association studies (PheWAS). The package can currently produce Manhattan plots, quantile-quantile (QQ) plots, and regional plots using GWAS summary statistics using the `fig_manhattan()`, `fig_qq()`, and `fig_region()` functions, respectively. In addition, PheWAS plots can be constructed using the `fig_phewas()` function.
+
+```{r setup, echo = TRUE, eval = TRUE, warning = FALSE, message = FALSE}
+library(dplyr)
+library(geni.plots)
+```
+
+# Functions
+
+The package contains the following functions: 
+
+* `fig_manhattan`: creates a Manhattan plot for genomic markers from across the genome, e.g. results from genome-wide association studies.  
+* `fig_phewas`: creates a plot visualising results from phenome-wide association studies (PheWAS).  
+* `fig_qq`: creates a quantile-quantile (QQ) plot.  
+* `fig_region`: creates a regional plot, i.e. a scatter graph of genomic markers associations (e.g. log10(p-values)) with a gene bar underneath.  
+* `fig_stack_region`: creates a stacked regional association plot.  
+
+# Data
+
+The package contains formatted test data downloaded from FinnGen r9 ([1:154426970-A-C](https://r9.finngen.fi/variant/1:154454494-A-C)) and from GWAS studies on IL6 ([GCST90274815](https://www.ebi.ac.uk/gwas/studies/GCST90274815)) and IL6R ([GCST90274815](https://www.ebi.ac.uk/gwas/studies/GCST90274815)) levels from the GWAS Catalog server.
+
+* `geni_test_manhattan`- a `data.frame` of results from a GWAS of interleukin-6 levels with *p*-values < `1e-3` ([GCST90274815](https://www.ebi.ac.uk/gwas/studies/GCST90274815)). The genomic coordinates used are GRCh37. A description of this data can be viewed using `help(geni_test_gwas)`.   
+* `geni_test_phewas`- a `data.frame` of PheWAS results for rs from FinnGen r9 ([1:154426970-A-C](https://r9.finngen.fi/variant/1:154454494-A-C)). A description of this data can be viewed using `help(geni_test_phewas)`.  
+* `geni_test_region`- a `list` containing:
+  * `assoc` - a `data.frame` of results from a GWAS of interleukin-6 levels for the GRCh37 region 1:154301970-154551970 ([GCST90274815](https://www.ebi.ac.uk/gwas/studies/GCST90274815)). The genomic coordinates used are GRCh37. A description of this data can be viewed using `help(geni_test_region)`.  
+  * `corr` - a `matrix` of correlation statsitics for the markers in `assoc` using the European samples from [1000 Genomes Phase 3](https://www.internationalgenome.org/). The genomic coordinates used are GRCh37.  
+* `geni_test_stack_region`- a `list` containing:
+  * `assoc` - a `data.frame` of results from GWAS studies on interleukin-6 and interleukin 6 recepter levels for the GRCh37 region 1:154301970-154551970 ([GCST90274815](https://www.ebi.ac.uk/gwas/studies/GCST90274815) and [GCST90088597](https://www.ebi.ac.uk/gwas/studies/GCST90088597)). The genomic coordinates used are GRCh37. A description of this data can be viewed using `help(geni_test_region)`.  
+  * `corr` - a `matrix` of correlation statsitics for the markers in `assoc` using the European samples from [1000 Genomes Phase 3](https://www.internationalgenome.org/). The genomic coordinates used are GRCh37.  
+
+# Plots {.tabset .tabset-fade}
+
+## Manhattan plot
+
+```{r manhattan-data, echo = TRUE, eval = TRUE}
+geni.plots::geni_test_manhattan %>%
+  as_tibble() %>%
+  head()
+```
+
+```{r manhattan, echo = TRUE, eval = TRUE, out.width = "100%", fig.width = 11, fig.height = 5}
+fig_manhattan(
+  data = geni.plots::geni_test_manhattan,
+  block_thresh = 1e-4,
+  label_box = TRUE
+)
+```
+
+Further details regarding functionality of the `fig_manhattan` function can be viewed using the command `help(fig_manhattan)`.  
+
+## PheWAS plot
+
+```{r phewas-data, echo = TRUE, eval = TRUE}
+geni.plots::geni_test_phewas %>%
+  as_tibble() %>%
+  head()
+```
+
+```{r phewas, echo = TRUE, eval = TRUE, out.width = "100%"}
+fig_phewas(
+  data = geni.plots::geni_test_phewas,
+  interactive = TRUE,
+  axis_text_angle = -70,
+  axis_text_size = 10
+)
+```
+
+Further details regarding functionality of the `fig_phewas` function can be viewed using the command `help(fig_phewas)`.  
+
+## QQ plot {.tabset .tabset-fade .tabset-pills}
+
+### Simple
+
+```{r qq, echo = TRUE, eval = TRUE, out.width = "100%"}
+fig_qq(
+  pvalues = geni.plots::geni_test_phewas$pvalue
+)
+```
+
+Further details regarding functionality of the `fig_qq` function can be viewed using the command `help(fig_qq)`.  
+
+### Categories
+
+```{r qq-cats, echo = TRUE, eval = TRUE, out.width = "100%"}
+fig_qq(
+  data = geni.plots::geni_test_phewas %>%
+    select(pvalue, group, label, text),
+  interactive = TRUE,
+  legend_title = "Category",
+  legend_title_size = 8,
+  legend_text_size = 6
+)
+```
+
+Further details regarding functionality of the `fig_qq` function can be viewed using the command `help(fig_qq)`.  
+
+## Regional plot {.tabset .tabset-fade .tabset-pills}
+
+### Regional plot
+
+```{r regional, echo = TRUE, eval = TRUE, out.width = "100%"}
+fig_region(
+  data = geni.plots::geni_test_region$assoc,
+  corr = geni.plots::geni_test_region$corr,
+  interactive = TRUE,
+  build = 37
+)
+```
+
+Further details regarding functionality of the `fig_region` function can be viewed using the command `help(fig_region)`.  
+
+### Stacked regional plot
+
+```{r regional-stack, echo = TRUE, eval = TRUE, out.width = "100%"}
+fig_region_stack(
+  data = geni.plots::geni_test_stack_region$assoc,
+  traits = c("Interleukin-6 levels", "Interleukin-6 receptor levels"),
+  corr = geni.plots::geni_test_stack_region$corr,
+  interactive = TRUE,
+  build = 37,
+  highlights = "rs11265611",
+  title_center = TRUE
+)
+```
+
+Further details regarding functionality of the `fig_region_stack` function can be viewed using the command `help(fig_region_stack)`.  
