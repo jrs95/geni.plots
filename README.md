@@ -1,4 +1,4 @@
-# GENI plots <img src='man/figures/geni.png' align="right" height="139"/>
+# GENI plots <img src='man/figures/logo.png' align="right" height="139"/>
 
 The GENI plots R package is designed to create a series of plots for visualising results from genome-wide association studies (GWAS) and phenome-wide association studies (PheWAS).  
 
