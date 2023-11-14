@@ -16,7 +16,7 @@ remotes::install_github("jrs95/geni.plots", build_vignettes = TRUE)
 * `fig_stack_region`: creates a stacked regional association plot.  
 
 ## Example
-See vignette for examples: https://jrs95.github.io/geni.plots/  
+See vignette for examples: https://jrs95.github.io/geni.plots/articles/geni_plots.html  
 
 ## Citation
 Please cite this R package using the link: https://github.com/jrs95/geni.plots  
