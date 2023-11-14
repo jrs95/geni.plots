@@ -1,6 +1,12 @@
 ---
 title: "GENI plots"
 package: geni (version `r packageVersion('geni.plots')`)
+output:
+  html_document:
+    theme: cosmo
+    toc: yes
+    toc_float: yes
+    toc_depth: 2
 vignette: >
     %\VignetteIndexEntry{geni.plots}
     %\VignetteEngine{knitr::rmarkdown}
@@ -105,8 +111,8 @@ fig_qq(
     select(pvalue, group, label, text),
   interactive = TRUE,
   legend_title = "Category",
-  legend_title_size = 8,
-  legend_text_size = 6
+  legend_title_size = 10,
+  legend_text_size = 7
 )
 ```
 
