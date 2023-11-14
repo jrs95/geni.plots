@@ -172,7 +172,7 @@
 #'   \item{\code{assoc}} {
 #'     a `data.frame` with genetic association results for interleukin-6 levels
 #'     from [GCST90274815](https://www.ebi.ac.uk/gwas/studies/GCST90274815) and
-#'     for interleukin-6 recepter levels
+#'     for interleukin-6 receptor levels
 #'     [GCST90088597](https://www.ebi.ac.uk/gwas/studies/GCST90088597)
 #'     for the region 1:154301970-154551970
 #'   }
@@ -201,7 +201,7 @@
 #'     marker
 #'   }
 #'   \item{\code{pvalue_2}} {
-#'     the association p-value for interleukin-6 recepter levels for each
+#'     the association p-value for interleukin-6 receptor levels for each
 #'     genomic marker
 #'   }
 #' }

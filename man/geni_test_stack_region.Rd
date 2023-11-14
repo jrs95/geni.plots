@@ -13,7 +13,7 @@ Specifically, this includes the following information:
 \item{\code{assoc}} {
 a \code{data.frame} with genetic association results for interleukin-6 levels
 from \href{https://www.ebi.ac.uk/gwas/studies/GCST90274815}{GCST90274815} and
-for interleukin-6 recepter levels
+for interleukin-6 receptor levels
 \href{https://www.ebi.ac.uk/gwas/studies/GCST90088597}{GCST90088597}
 for the region 1:154301970-154551970
 }
@@ -55,7 +55,7 @@ the association p-value for interleukin-6 levels for each genomic
 marker
 }
 \item{\code{pvalue_2}} {
-the association p-value for interleukin-6 recepter levels for each
+the association p-value for interleukin-6 receptor levels for each
 genomic marker
 }
 }
