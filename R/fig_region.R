@@ -937,8 +937,10 @@ fig_region_stack <- function(data, traits, corr = NULL, corr_top = NULL,
 
   ## Genes
   if (genebar == TRUE) {
-    genes_df <- fig_gene_bar_data(chr, x_min, x_max, build, genebar_ntracks,
-      interactive, genebar_label_pos)
+    genes_df <- fig_gene_bar_data(
+      chr, x_min, x_max, build, genebar_ntracks,
+      interactive, genebar_label_pos
+    )
     gene_bar <- fig_gene_bar_plot(
       genes_df$genes_df, chr, x_min, x_max, genes_df$ntracks, interactive,
       genebar_label_size, genebar_line_size, axis_text_size, axis_title_size
@@ -1944,7 +1946,8 @@ fig_gene_bar_data <- function(chrom, x_min, x_max, build = 38, ntracks = NULL,
         mid_point = start + (end - start) / 2,
         start = if_else(
           !!small_gene,
-          mid_point - (x_max - x_min) / 380, start, start),
+          mid_point - (x_max - x_min) / 380, start, start
+        ),
         end = if_else(!!small_gene, mid_point + (x_max - x_min) / 380, end, end)
       )
 

@@ -829,10 +829,12 @@ fig_manhattan_plot <- function(df, df_plot, colours = c("#7395D3", "#1D345D"),
           mapping = aes(
             colour = factor(
               highlight,
-              levels = sort(unique(highlight))),
+              levels = sort(unique(highlight))
+            ),
             fill = factor(
               highlight,
-              levels = sort(unique(highlight))),
+              levels = sort(unique(highlight))
+            ),
             tooltip = text
           ),
           data = filter(df, highlight != 0 & highlight_shape == 2),

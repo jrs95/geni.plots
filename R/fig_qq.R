@@ -487,8 +487,10 @@ fig_qq_data <- function(pvalues = NULL, group = NULL, data = NULL,
     data <- bind_cols(data, mpts)
     if (ci_print == TRUE) {
       print(
-        paste0("Proportion of points within the CI: ",
-          round(sum((data$y >= data$z1) & (data$y <= data$z2)) / nrow(data), 5))
+        paste0(
+          "Proportion of points within the CI: ",
+          round(sum((data$y >= data$z1) & (data$y <= data$z2)) / nrow(data), 5)
+        )
       )
     }
     if (nrow(data) > 1000000) {
