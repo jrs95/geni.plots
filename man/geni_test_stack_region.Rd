@@ -18,10 +18,11 @@ for interleukin-6 receptor levels
 for the region 1:154301970-154551970
 }
 \item{\code{corr}} {
-a \code{matrix} of correlation statsitics from the European samples of
+a \code{matrix} of Pearson correlation statistics (not squared) from the
+European samples of
 \href{https://www.internationalgenome.org/}{1000 Genomes Phase 3}
-for the region 1:154301970-154551970, this \code{matrix} has the same
-markers in the same order as \code{assoc}
+for the region 1:154301970-154551970, this \code{matrix} has the same markers
+in the same order as \code{assoc}
 }
 }
 }

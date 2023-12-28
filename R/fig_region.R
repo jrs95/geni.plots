@@ -202,6 +202,11 @@
 #'   legend_title_size = 10
 #' )
 #'
+#' # Notes:
+#' #   (i) corr has to have the same markers as assoc in the same order,
+#' #   (ii) by default fig_region assumes corr contains correlation
+#'          statistics that have not been squared
+#'
 #' @author James Staley <jrstaley95@gmail.com>
 #'
 #' @export
@@ -793,6 +798,11 @@ fig_region <- function(data, corr = NULL, corr_top = NULL, top_marker = NULL,
 #'   highlights = "rs11265611",
 #'   title_center = TRUE
 #' )
+#'
+#' # Notes:
+#' #   (i) corr has to have the same markers as assoc in the same order,
+#' #   (ii) by default fig_region_stack assumes corr contains correlation
+#'          statistics that have not been squared
 #'
 #' @author James Staley <jrstaley95@gmail.com>
 #'

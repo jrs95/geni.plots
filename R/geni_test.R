@@ -117,9 +117,11 @@
 #'     the region 1:154301970-154551970
 #'   }
 #'   \item{\code{corr}} {
-#'     a `matrix` of correlation statsitics from the European samples of
-#'     1000 Genomes Phase 3 for the region 1:154301970-154551970, this `matrix`
-#'     has the same markers in the same order as `assoc`
+#'     a `matrix` of Pearson correlation statistics (not squared) from the
+#'     European samples of
+#'     [1000 Genomes Phase 3](https://www.internationalgenome.org/)
+#'     for the region 1:154301970-154551970, this `matrix` has the same markers
+#'     in the same order as `assoc`
 #'   }
 #' }
 #'
@@ -177,10 +179,11 @@
 #'     for the region 1:154301970-154551970
 #'   }
 #'   \item{\code{corr}} {
-#'     a `matrix` of correlation statsitics from the European samples of
+#'     a `matrix` of Pearson correlation statistics (not squared) from the
+#'     European samples of
 #'     [1000 Genomes Phase 3](https://www.internationalgenome.org/)
-#'     for the region 1:154301970-154551970, this `matrix` has the same
-#'     markers in the same order as `assoc`
+#'     for the region 1:154301970-154551970, this `matrix` has the same markers
+#'     in the same order as `assoc`
 #'   }
 #' }
 #'
