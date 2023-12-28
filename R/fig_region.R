@@ -203,9 +203,9 @@
 #' )
 #'
 #' # Notes:
-#' #   (i) corr has to have the same markers as assoc in the same order,
+#' #   (i) corr has to have the same markers as assoc in the same order
 #' #   (ii) by default fig_region assumes corr contains correlation
-#'          statistics that have not been squared
+#' #        statistics that have not been squared
 #'
 #' @author James Staley <jrstaley95@gmail.com>
 #'
@@ -800,9 +800,9 @@ fig_region <- function(data, corr = NULL, corr_top = NULL, top_marker = NULL,
 #' )
 #'
 #' # Notes:
-#' #   (i) corr has to have the same markers as assoc in the same order,
+#' #   (i) corr has to have the same markers as assoc in the same order
 #' #   (ii) by default fig_region_stack assumes corr contains correlation
-#'          statistics that have not been squared
+#' #        statistics that have not been squared
 #'
 #' @author James Staley <jrstaley95@gmail.com>
 #'

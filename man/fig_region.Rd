@@ -245,9 +245,9 @@ fig_region(
 )
 
 # Notes:
-#   (i) corr has to have the same markers as assoc in the same order,
+#   (i) corr has to have the same markers as assoc in the same order
 #   (ii) by default fig_region assumes corr contains correlation
-         statistics that have not been squared
+#        statistics that have not been squared
 
 }
 \author{

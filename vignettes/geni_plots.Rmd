@@ -133,7 +133,8 @@ fig_region(
 )
 ```
 
-Note:
+Note:  
+
 1. this figure can be made interactive by setting `interactive = TRUE`  
 2. `corr` has to have the same markers as `assoc` in the same order  
 3. by default `fig_region` assumes `corr` (or `corr_top`) contains correlation statistics that have not been squared, if `corr` is a squared correlation matrix set `r2 = TRUE`  
@@ -153,7 +154,8 @@ fig_region_stack(
 )
 ```
 
-Note:
+Note:  
+
 1. this figure can be made interactive by setting `interactive = TRUE`  
 2. `corr` has to have the same markers as `assoc` in the same order  
 3. by default `fig_region_stack` assumes `corr` (or `corr_top`) contains correlation statistics that have not been squared, if `corr` is a squared correlation matrix set `r2 = TRUE`  
