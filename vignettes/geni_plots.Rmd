@@ -80,11 +80,12 @@ geni.plots::geni_test_phewas %>%
   head()
 ```
 
-```{r phewas, echo = TRUE, eval = TRUE, out.width = "100%"}
+```{r phewas, echo = TRUE, eval = TRUE, out.width = "100%", fig.width = 10, fig.height = 7}
 fig_phewas(
   data = geni.plots::geni_test_phewas,
   axis_text_angle = -70,
-  axis_text_size = 10
+  axis_text_size = 10,
+  label_size = 3.5
 )
 ```
 
@@ -112,7 +113,7 @@ fig_qq(
     select(pvalue, group, label, text),
   legend_title = "Category",
   legend_title_size = 10,
-  legend_text_size = 7
+  legend_text_size = 8
 )
 ```
 
@@ -124,7 +125,7 @@ Further details regarding functionality of the `fig_qq` function can be viewed u
 
 ### Regional plot
 
-```{r regional, echo = TRUE, eval = TRUE, out.width = "100%"}
+```{r regional, echo = TRUE, eval = TRUE, out.width = "100%", fig.width = 9, fig.height = 7}
 fig_region(
   data = geni.plots::geni_test_region$assoc,
   corr = geni.plots::geni_test_region$corr,
@@ -138,7 +139,7 @@ Further details regarding functionality of the `fig_region` function can be view
 
 ### Stacked regional plot
 
-```{r regional-stack, echo = TRUE, eval = TRUE, out.width = "100%"}
+```{r regional-stack, echo = TRUE, eval = TRUE, out.width = "100%", fig.width = 9, fig.height = 11}
 fig_region_stack(
   data = geni.plots::geni_test_stack_region$assoc,
   traits = c("Interleukin-6 levels", "Interleukin-6 receptor levels"),

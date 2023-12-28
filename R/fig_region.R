@@ -147,10 +147,10 @@
 #'   to the displayed groups should be included (default: `TRUE`)
 #'
 #' @param legend_text_size a `numeric` value indicating the size of the legend
-#'   text (default: `NULL`)
+#'   text (default: `12`)
 #'
 #' @param legend_title_size a `numeric` value indicating the size of the legend
-#'   title (default: `NULL`)
+#'   title (default: `12`)
 #'
 #' @param point_padding a `numeric` value indicating the relative distance of
 #'   labels from plotted points (default: `0`
@@ -195,8 +195,11 @@
 #'   data = geni.plots::geni_test_region$assoc,
 #'   corr = geni.plots::geni_test_region$corr,
 #'   build = 37,
-#'   axis_text_size = 12,
-#'   axis_title_size = 13
+#'   axis_text_size = 11,
+#'   axis_title_size = 12,
+#'   genebar_label_size = 3.5,
+#'   legend_text_size = 10,
+#'   legend_title_size = 10
 #' )
 #'
 #' @author James Staley <jrstaley95@gmail.com>

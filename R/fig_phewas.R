@@ -152,8 +152,8 @@
 #' @examples
 #' fig_phewas(
 #'   data = geni.plots::geni_test_phewas,
-#'   axis_text_angle = -70,
-#'   axis_text_size = 10
+#'   axis_text_angle = -85,
+#'   axis_text_size = 8
 #' )
 #'
 #' @author James Staley <jrstaley95@gmail.com>

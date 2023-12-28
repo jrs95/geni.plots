@@ -2,3 +2,4 @@
 .lintr
 docs
 .DS_Store
+/vignettes/*.html

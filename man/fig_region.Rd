@@ -183,10 +183,10 @@ title text for the plot (default: \code{16})}
 to the displayed groups should be included (default: \code{TRUE})}
 
 \item{legend_text_size}{a \code{numeric} value indicating the size of the legend
-text (default: \code{NULL})}
+text (default: \code{12})}
 
 \item{legend_title_size}{a \code{numeric} value indicating the size of the legend
-title (default: \code{NULL})}
+title (default: \code{12})}
 
 \item{point_padding}{a \code{numeric} value indicating the relative distance of
 labels from plotted points (default: \code{0}}
@@ -237,8 +237,11 @@ fig_region(
   data = geni.plots::geni_test_region$assoc,
   corr = geni.plots::geni_test_region$corr,
   build = 37,
-  axis_text_size = 12,
-  axis_title_size = 13
+  axis_text_size = 11,
+  axis_title_size = 12,
+  genebar_label_size = 3.5,
+  legend_text_size = 10,
+  legend_title_size = 10
 )
 
 }

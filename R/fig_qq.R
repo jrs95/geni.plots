@@ -161,7 +161,7 @@
 #'   data = geni.plots::geni_test_phewas[, c("pvalue", "group", "label", "text")],
 #'   legend_title = "Category",
 #'   legend_title_size = 10,
-#'   legend_text_size = 7
+#'   legend_text_size = 8
 #' )
 #'
 #' @author James Staley <jrstaley95@gmail.com>
