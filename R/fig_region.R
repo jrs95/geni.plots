@@ -1840,7 +1840,9 @@ fig_region_plot <- function(df, chr, x_min, x_max, build = 38, prob = FALSE,
 #' @title Figure recombination rate data
 #'
 #' @description `fig_recombination_rate_data` creates the `data.frame` used to
-#'   plot the recombination rate.
+#'   plot the recombination rate. The build 37 (hg19) recombination rate data
+#'   is from IMPUTE 2 and the build 38 (hg38) recombination rate data is from
+#'   LocusZoom. Both are based on HapMap Phase II.
 #'
 #' @name fig_recombination_rate_data
 #'
@@ -1876,7 +1878,7 @@ fig_recombination_rate_data <- function(chrom, x_min, x_max, build = 38) {
   recomb <- recomb %>%
     mutate(
       x = as.integer(pos),
-      y2 = as.numeric(combined_rate)
+      y2 = as.numeric(recomb_rate)
     ) %>%
     select(x, y2)
 
