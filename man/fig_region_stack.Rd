@@ -229,7 +229,7 @@ should be turned into an interactive graphic using
 \code{fig_region_stack} creates a stacked regional association plot.
 }
 \examples{
-fig_region_stack(
+fig <- fig_region_stack(
   data = geni.plots::geni_test_stack_region$assoc,
   traits = c("Interleukin-6 levels", "Interleukin-6 receptor levels"),
   corr = geni.plots::geni_test_stack_region$corr,

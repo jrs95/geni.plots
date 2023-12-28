@@ -186,7 +186,9 @@ results are truncated using a p-value cut-off of \code{1e-30}.
 }
 \examples{
 fig_phewas(
-  data = geni.plots::geni_test_phewas
+  data = geni.plots::geni_test_phewas,
+  axis_text_angle = -70,
+  axis_text_size = 10
 )
 
 }

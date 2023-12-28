@@ -193,9 +193,10 @@ fig_qq(
   pvalues = geni.plots::geni_test_phewas$pvalue
 )
 fig_qq(
-  data = geni.plots::geni_test_phewas \%>\%
-    select(pvalue, group, label, text),
-  interactive = TRUE
+  data = geni.plots::geni_test_phewas[, c("pvalue", "group", "label", "text")],
+  legend_title = "Category",
+  legend_title_size = 10,
+  legend_text_size = 7
 )
 
 }

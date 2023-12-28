@@ -236,7 +236,9 @@ underneath.
 fig_region(
   data = geni.plots::geni_test_region$assoc,
   corr = geni.plots::geni_test_region$corr,
-  build = 37
+  build = 37,
+  axis_text_size = 12,
+  axis_title_size = 13
 )
 
 }
