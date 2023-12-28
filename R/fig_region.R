@@ -194,7 +194,9 @@
 #' fig_region(
 #'   data = geni.plots::geni_test_region$assoc,
 #'   corr = geni.plots::geni_test_region$corr,
-#'   build = 37
+#'   build = 37,
+#'   axis_text_size = 12,
+#'   axis_title_size = 13
 #' )
 #'
 #' @author James Staley <jrstaley95@gmail.com>
@@ -532,7 +534,7 @@ fig_region <- function(data, corr = NULL, corr_top = NULL, top_marker = NULL,
     assoc_plot_size <- 50
   if (genebar == TRUE && is.null(genebar_plot_size)) {
     if (genes_df$ntracks == 2) {
-      genebar_plot_size <- 12
+      genebar_plot_size <- 14
     } else if (genes_df$ntracks > 2 && genes_df$ntracks <= 8) {
       genebar_plot_size <- 24
     } else if (genes_df$ntracks > 8) {
@@ -780,7 +782,7 @@ fig_region <- function(data, corr = NULL, corr_top = NULL, top_marker = NULL,
 #' @return `fig_region_stack` returns a stacked regional plot.
 #'
 #' @examples
-#' fig_region_stack(
+#' fig <- fig_region_stack(
 #'   data = geni.plots::geni_test_stack_region$assoc,
 #'   traits = c("Interleukin-6 levels", "Interleukin-6 receptor levels"),
 #'   corr = geni.plots::geni_test_stack_region$corr,

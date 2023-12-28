@@ -1,3 +1,7 @@
+# geni.plots 0.0.3
+
+* Update manuals and vignette.  
+
 # geni.plots 0.0.2
 
 * Remove built version of vignette  

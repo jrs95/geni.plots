@@ -1,6 +1,6 @@
 Package: geni.plots
 Title: GENI plots
-Version: 0.0.2
+Version: 0.0.3
 Date: 28-12-2023
 Authors@R: c(
     person(
