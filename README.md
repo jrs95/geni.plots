@@ -15,7 +15,7 @@ remotes::install_github("jrs95/geni.plots", build_vignettes = TRUE)
 * `fig_region`: creates a regional plot, i.e. a scatter graph of genomic markers associations (e.g. log10(p-values)) with a gene bar underneath.  
 * `fig_stack_region`: creates a stacked regional association plot.  
 
-## Example
+## Examples
 See vignette for examples: https://jrs95.github.io/geni.plots/articles/geni_plots.html  
 
 ## Citation
