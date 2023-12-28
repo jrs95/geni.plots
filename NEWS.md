@@ -1,3 +1,7 @@
+# geni.plots 0.0.4
+
+* Update manuals and vignette.  
+
 # geni.plots 0.0.3
 
 * Update manuals and vignette.  
