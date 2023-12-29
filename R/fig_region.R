@@ -253,7 +253,7 @@ fig_region <- function(data, corr = NULL, corr_top = NULL, top_marker = NULL,
     stop(
       "there should only be markers from one chromosome in the markers dataset"
     )
-  if (!(data$chr[1] %in% 1:22))
+  if (!(as.character(data$chr[1]) %in% as.character(1:22)))
     stop("the plotting tool is only for autosomal chromosomes")
   if (class(data$pos) != "integer")
     stop("the pos variable has to be an integer")
@@ -870,7 +870,7 @@ fig_region_stack <- function(data, traits, corr = NULL, corr_top = NULL,
     stop(
       "there should only be markers from one chromosome in the markers dataset"
     )
-  if (!(data$chr[1] %in% 1:22))
+  if (!(as.character(data$chr[1]) %in% as.character(1:22)))
     stop("the plotting tool is only for autosomal chromosomes")
   if (any(is.na(select(data, marker, chr, pos))))
     stop("there are missing values in the dataset")
