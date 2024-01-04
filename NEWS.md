@@ -1,5 +1,9 @@
 # geni.plots 0.0.5
 
+* Update description.  
+
+# geni.plots 0.0.5
+
 * Update regional plots.  
 
 # geni.plots 0.0.4
