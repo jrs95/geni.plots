@@ -1,3 +1,7 @@
+# geni.plots 0.0.7
+
+* Update test data.  
+
 # geni.plots 0.0.6
 
 * Update description.  
