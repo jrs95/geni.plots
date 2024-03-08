@@ -33,6 +33,7 @@ Imports:
     ggiraph,
     ggrepel,
     ggnewscale,
+    htmlwidgets,
     patchwork,
     zoo
 Suggests:
