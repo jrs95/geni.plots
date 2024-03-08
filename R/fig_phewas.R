@@ -388,7 +388,7 @@ fig_phewas_data <- function(data, groups = NULL, interactive = FALSE,
 
   ## Position
   data <- data %>%
-    arrange(group_int, runif(nrow(.))) %>%
+    arrange(group_int, stats::runif(nrow(.))) %>%
     mutate(
       x = seq_len(nrow(.)) + (group_dist * nrow(.)) * group_int
     ) %>%

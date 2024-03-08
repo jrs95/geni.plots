@@ -460,8 +460,8 @@ fig_qq_data <- function(pvalues = NULL, group = NULL, data = NULL,
   # Inflation factor
   if (inf_factor == TRUE) {
     inf_factor <- round(
-      median(qchisq(10^(-pull(df, y)), 1, lower.tail = FALSE)) /
-        qchisq(0.5, 1),
+      stats::median(stats::qchisq(10^(-pull(df, y)), 1, lower.tail = FALSE)) /
+        stats::qchisq(0.5, 1),
       4
     )
     print(paste0("Inflation factor: ", inf_factor))
@@ -472,12 +472,12 @@ fig_qq_data <- function(pvalues = NULL, group = NULL, data = NULL,
     data <- data %>%
       arrange(desc(x))
     mpts <- tibble(
-      x1 = round(-log10(ppoints(nrow(data), a = 0.5)), 4),
+      x1 = round(-log10(stats::ppoints(nrow(data), a = 0.5)), 4),
       z1 = round(
-        -log10(qbeta((1 - ci_alpha / 2), 1:nrow(data), nrow(data):1)),
+        -log10(stats::qbeta((1 - ci_alpha / 2), 1:nrow(data), nrow(data):1)),
         4
       ),
-      z2 = round(-log10(qbeta(ci_alpha / 2, 1:nrow(data), nrow(data):1)), 4)
+      z2 = round(-log10(stats::qbeta(ci_alpha / 2, 1:nrow(data), nrow(data):1)), 4)
     )
     if (nrow(data) != nrow(mpts))
       stop(
