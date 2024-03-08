@@ -35,6 +35,8 @@ Imports:
     ggnewscale,
     patchwork,
     zoo
+Suggests:
+    knitr
 Encoding: UTF-8
 ByteCompile: true
 LazyData: true
