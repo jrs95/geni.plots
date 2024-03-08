@@ -499,8 +499,8 @@ fig_qq_data <- function(pvalues = NULL, group = NULL, data = NULL,
       ids <- seq_len(nrow(data))
       ids <- ids[
         -c(
-          head(ids, n = floor(0.05 * length(ids))),
-          tail(ids, n = floor(0.05 * length(ids)))
+          utils::head(ids, n = floor(0.05 * length(ids))),
+          utils::tail(ids, n = floor(0.05 * length(ids)))
         )
       ]
       ids <- sample(ids, size = floor(0.9 * length(ids)))
