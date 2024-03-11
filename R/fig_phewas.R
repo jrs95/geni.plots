@@ -406,7 +406,7 @@ fig_phewas_data <- function(data, groups = NULL, interactive = FALSE,
       if (sum(data$label != "") > label_n) {
         data <- data %>%
           arrange(desc(y)) %>%
-          mutate(label = if_else(row_number(.) > !!label_n, "", label)) %>%
+          mutate(label = if_else(row_number() > !!label_n, "", label)) %>%
           arrange(x)
       }
     }

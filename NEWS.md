@@ -1,3 +1,7 @@
+# geni.plots 0.0.8
+
+* Fix minor labelling bug in `fig_phewas` and `fig_qq`.  
+
 # geni.plots 0.0.7
 
 * Update test data.  

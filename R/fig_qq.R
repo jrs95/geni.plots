@@ -522,7 +522,7 @@ fig_qq_data <- function(pvalues = NULL, group = NULL, data = NULL,
       if (sum(data$label != "") > label_n) {
         data <- data %>%
           arrange(desc(y)) %>%
-          mutate(label = if_else(row_number(.) > !!label_n, "", label)) %>%
+          mutate(label = if_else(row_number() > !!label_n, "", label)) %>%
           arrange(x)
       }
     }
