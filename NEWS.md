@@ -1,6 +1,7 @@
 # geni.plots 0.0.8
 
 * Fix minor labelling bug in `fig_phewas` and `fig_qq`.  
+* Update `fig_region` legend to correspond with `ggplot2 3.5.0`.  
 
 # geni.plots 0.0.7
 
