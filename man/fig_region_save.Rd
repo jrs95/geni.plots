@@ -37,13 +37,14 @@ in inches (default: \code{NULL})}
 \code{fig_region_save} saves the regional plots to file.
 }
 \examples{
+\dontrun{
 fig <- fig_region(
   data = geni.plots::geni_test_region$assoc,
   corr = geni.plots::geni_test_region$corr,
   build = 37
 )
 fig_region_save(fig, "test.png")
-
+}
 }
 \author{
 James Staley \href{mailto:jrstaley95@gmail.com}{jrstaley95@gmail.com}
