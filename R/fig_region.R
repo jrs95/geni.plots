@@ -2204,13 +2204,14 @@ fig_gene_bar_plot <- function(df, chr, x_min, x_max, ntracks,
 #' @param dpi the resolution of the plot (default: `500`)
 #'
 #' @examples
+#' \dontrun{
 #' fig <- fig_region(
 #'   data = geni.plots::geni_test_region$assoc,
 #'   corr = geni.plots::geni_test_region$corr,
 #'   build = 37
 #' )
 #' fig_region_save(fig, "test.png")
-#'
+#' }
 #' @author James Staley <jrstaley95@gmail.com>
 #'
 #' @export
