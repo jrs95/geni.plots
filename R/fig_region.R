@@ -1588,13 +1588,15 @@ fig_region_plot <- function(df, chr, x_min, x_max, build = 38, prob = FALSE,
       fig <- fig +
         geom_point_interactive(
           mapping = aes(fill = r2_cat, tooltip = text),
-          size = point_size, stroke = point_size / 8, shape = 21, alpha = alpha
+          size = point_size, stroke = point_size / 8, shape = 21, alpha = alpha,
+          show.legend = TRUE
         )
     } else {
       fig <- fig +
         geom_point(
           mapping = aes(fill = r2_cat),
-          size = point_size, stroke = point_size / 8, shape = 21, alpha = alpha
+          size = point_size, stroke = point_size / 8, shape = 21, alpha = alpha,
+          show.legend = TRUE
         )
     }
     fig <- fig +
