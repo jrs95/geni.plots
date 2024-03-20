@@ -3,3 +3,4 @@
 docs
 .DS_Store
 /vignettes/*.html
+.Rhistory
