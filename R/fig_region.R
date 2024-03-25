@@ -255,18 +255,18 @@ fig_region <- function(data, corr = NULL, corr_top = NULL, top_marker = NULL,
     )
   if (!(as.character(data$chr[1]) %in% as.character(1:22)))
     stop("the plotting tool is only for autosomal chromosomes")
-  if (class(data$pos) != "integer")
+  if (!inherits(data$pos, "integer"))
     stop("the pos variable has to be an integer")
   if ("pvalue" %in% names(data)) {
-    if (class(data$pvalue) != "numeric")
+    if (!inherits(data$pvalue, "numeric"))
       stop("the pvalue variable has to be an numeric")
   }
   if ("z" %in% names(data)) {
-    if (class(data$z) != "numeric")
+    if (!inherits(data$z, "numeric"))
       stop("the z variable has to be an numeric")
   }
   if ("prob" %in% names(data)) {
-    if (class(data$prob) != "numeric")
+    if (!inherits(data$prob, "numeric"))
       stop("the prob variable has to be an numeric")
   }
   if (is.null(corr) && !is.null(corr_top) && is.null(top_marker))
@@ -332,7 +332,7 @@ fig_region <- function(data, corr = NULL, corr_top = NULL, top_marker = NULL,
     } else {
       data <- data %>%
         mutate(
-          stats = -(log(2) + pnorm(-abs(as.numeric(z)), log.p = TRUE)) /
+          stats = -(log(2) + stats::pnorm(-abs(as.numeric(z)), log.p = TRUE)) /
             log(10),
           stats = if_else(stats > 1000, 1000, stats)
         )
@@ -361,7 +361,7 @@ fig_region <- function(data, corr = NULL, corr_top = NULL, top_marker = NULL,
                 text = paste0(
                   "SNP: ", marker,
                   "<br>p-value: ",
-                  signif(2 * pnorm(-abs(as.numeric(z))), 3)
+                  signif(2 * stats::pnorm(-abs(as.numeric(z))), 3)
                 )
               )
           }
@@ -379,7 +379,7 @@ fig_region <- function(data, corr = NULL, corr_top = NULL, top_marker = NULL,
               mutate(
                 text = paste0(
                   "Marker: ", marker, "<br>p-value: ",
-                  signif(2 * pnorm(-abs(as.numeric(z))), 3)
+                  signif(2 * stats::pnorm(-abs(as.numeric(z))), 3)
                 )
               )
           }
@@ -874,7 +874,7 @@ fig_region_stack <- function(data, traits, corr = NULL, corr_top = NULL,
     stop("the plotting tool is only for autosomal chromosomes")
   if (any(is.na(select(data, marker, chr, pos))))
     stop("there are missing values in the dataset")
-  if (class(data$pos) != "integer")
+  if (!inherits(data$pos, "integer"))
     stop("the pos variable has to be an integer")
   if (is.null(corr) && !is.null(corr_top) && is.null(top_marker))
     stop("top_marker must be defined if corr_top is provided")
@@ -981,7 +981,7 @@ fig_region_stack <- function(data, traits, corr = NULL, corr_top = NULL,
           mutate(
             stats = -(
               log(2) +
-                pnorm(-abs(as.numeric(df[[paste0("z_", i)]])), log.p = TRUE)
+                stats::pnorm(-abs(as.numeric(df[[paste0("z_", i)]])), log.p = TRUE)
             ) / log(10),
             stats = if_else(stats > 300, 300, stats, stats)
           )
@@ -1347,7 +1347,7 @@ fig_region_data <- function(data, corr = NULL, corr_top = NULL,
   # Keep non-missing data
   keep <- data %>%
     select(which(!(names(data) %in% "highlight_cat"))) %>%
-    complete.cases(.)
+    stats::complete.cases(.)
   if (!is.null(corr)) {
     corr <- corr[which(keep), which(keep), drop = FALSE]
   }
@@ -2204,13 +2204,14 @@ fig_gene_bar_plot <- function(df, chr, x_min, x_max, ntracks,
 #' @param dpi the resolution of the plot (default: `500`)
 #'
 #' @examples
+#' \dontrun{
 #' fig <- fig_region(
 #'   data = geni.plots::geni_test_region$assoc,
 #'   corr = geni.plots::geni_test_region$corr,
 #'   build = 37
 #' )
 #' fig_region_save(fig, "test.png")
-#'
+#' }
 #' @author James Staley <jrstaley95@gmail.com>
 #'
 #' @export

@@ -25,7 +25,6 @@ BugReports: https://github.com/jrs95/geni.plots/issues
 Depends:
     R (>= 3.6.0)
 Imports:
-    methods,
     dplyr,
     tidyr,
     magrittr,
@@ -33,8 +32,11 @@ Imports:
     ggiraph,
     ggrepel,
     ggnewscale,
+    htmlwidgets,
     patchwork,
     zoo
+Suggests:
+    knitr
 Encoding: UTF-8
 ByteCompile: true
 LazyData: true
