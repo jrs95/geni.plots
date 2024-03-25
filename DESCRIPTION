@@ -1,7 +1,7 @@
 Package: geni.plots
 Title: GENI plots
-Version: 0.0.8
-Date: 18-03-2024
+Version: 0.0.9
+Date: 25-03-2024
 Authors@R: c(
     person(
         given = "James",

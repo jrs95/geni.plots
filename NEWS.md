@@ -1,3 +1,7 @@
+# geni.plots 0.0.9
+
+* Add suggestions from `@remlapmot`.  
+
 # geni.plots 0.0.8
 
 * Fix minor labelling bug in `fig_phewas` and `fig_qq`.  
