@@ -1,3 +1,7 @@
+# geni.plots 0.1.0
+
+* Minor updates to the vignette.  
+
 # geni.plots 0.0.9
 
 * Add suggestions from `@remlapmot`.  
