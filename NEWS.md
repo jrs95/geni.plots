@@ -1,35 +1,39 @@
+# geni.plots 0.1.1
+
+* Fixed plotting with inflation factor and sampling in `fig_qq`.  
+
 # geni.plots 0.1.0
 
 * Minor updates to the vignette.  
 
 # geni.plots 0.0.9
 
-* Add suggestions from `@remlapmot`.  
+* Added suggestions from `@remlapmot`.  
 
 # geni.plots 0.0.8
 
-* Fix minor labelling bug in `fig_phewas` and `fig_qq`.  
-* Update `fig_region` legend to correspond with `ggplot2 3.5.0`.  
+* Fixed minor labelling bug in `fig_phewas` and `fig_qq`.  
+* Updated `fig_region` legend to correspond with `ggplot2 3.5.0`.  
 
 # geni.plots 0.0.7
 
-* Update test data.  
+* Updated test data.  
 
 # geni.plots 0.0.6
 
-* Update description.  
+* Updated description.  
 
 # geni.plots 0.0.5
 
-* Update regional plots.  
+* Updated regional plots.  
 
 # geni.plots 0.0.4
 
-* Update manuals and vignette.  
+* Updated manuals and vignette.  
 
 # geni.plots 0.0.3
 
-* Update manuals and vignette.  
+* Updated manuals and vignette.  
 
 # geni.plots 0.0.2
 

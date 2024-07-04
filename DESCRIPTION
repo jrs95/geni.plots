@@ -1,7 +1,7 @@
 Package: geni.plots
 Title: GENI plots
-Version: 0.1.0
-Date: 05-04-2024
+Version: 0.1.1
+Date: 04-07-2024
 Authors@R: c(
     person(
         given = "James",
@@ -15,6 +15,12 @@ Authors@R: c(
         family = "Spiller",
         role = c("aut"),
         comment = c(ORCID = "0000-0002-8169-5531")
+    ),
+    person(
+        given = "Tom",
+        family = "Palmer",
+        role = c("ctb"),
+        comment = c(ORCID = "0000-0003-4655-4511")
     )
   )
 Description: GENI plots is designed to visualise results from genome-wide

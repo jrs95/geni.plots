@@ -459,12 +459,12 @@ fig_qq_data <- function(pvalues = NULL, group = NULL, data = NULL,
 
   # Inflation factor
   if (inf_factor == TRUE) {
-    inf_factor <- round(
-      stats::median(stats::qchisq(10^(-pull(df, y)), 1, lower.tail = FALSE)) /
+    inflation_factor <- round(
+      stats::median(stats::qchisq(10^(-data$y), 1, lower.tail = FALSE)) /
         stats::qchisq(0.5, 1),
       4
     )
-    print(paste0("Inflation factor: ", inf_factor))
+    print(paste0("Inflation factor: ", inflation_factor))
   }
 
   # Confidence intervals
@@ -534,7 +534,7 @@ fig_qq_data <- function(pvalues = NULL, group = NULL, data = NULL,
       filter(y >= -log10(!!sample_thresh))
     df2 <- data %>%
       filter(y < -log10(!!sample_thresh)) %>%
-      slice(sample(nrow(df2), ceiling(sample_prop * nrow(df2))))
+      slice(sample(nrow(.), ceiling(sample_prop * nrow(.))))
     data <- bind_rows(df1, df2)
   }
 
@@ -545,7 +545,7 @@ fig_qq_data <- function(pvalues = NULL, group = NULL, data = NULL,
   # Output
   output <- list(df = data)
   if (inf_factor == TRUE) {
-    output$inf_factor <- inf_factor
+    output$inflation_factor <- inflation_factor
   }
 
   # Return
@@ -639,7 +639,7 @@ fig_qq_plot <- function(df, groups_exist = FALSE, colours = NULL,
 
   # Dataset
   if (inf_factor == TRUE)
-    inf_factor <- df$inf_factor
+    inflation_factor <- df$inflation_factor
   df <- df$df
 
   # Plot
@@ -820,7 +820,7 @@ fig_qq_plot <- function(df, groups_exist = FALSE, colours = NULL,
       geom_label(
         mapping = aes(x = x, y = y),
         data = df_inf,
-        label = deparse(bquote(lambda[inf] ~ "=" ~ .(inf_factor))),
+        label = deparse(bquote(lambda[inf] ~ "=" ~ .(inflation_factor))),
         parse = TRUE, hjust = 0, size = label_size
       )
   }
