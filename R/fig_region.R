@@ -415,7 +415,7 @@ fig_region <- function(data, corr = NULL, corr_top = NULL, top_marker = NULL,
   # Plot
 
   ## Genomic location
-  chr <- as.character(first(pull(data, chr)))
+  chrom <- as.character(first(pull(data, chr)))
   if (!is.null(x_min)) {
     x_min <- as.integer(x_min)
   } else {
@@ -438,11 +438,11 @@ fig_region <- function(data, corr = NULL, corr_top = NULL, top_marker = NULL,
   ## Gene bar
   if (genebar == TRUE) {
     genes_df <- fig_gene_bar_data(
-      chr, x_min, x_max, build, genebar_ntracks, interactive,
+      chrom, x_min, x_max, build, genebar_ntracks, interactive,
       genebar_label_pos
     )
     gene_bar <- fig_gene_bar_plot(
-      genes_df$genes_df, chr, x_min, x_max, genes_df$ntracks, interactive,
+      genes_df$genes_df, chrom, x_min, x_max, genes_df$ntracks, interactive,
       genebar_label_size, genebar_line_size, axis_text_size, axis_title_size
     )
   }
@@ -459,7 +459,7 @@ fig_region <- function(data, corr = NULL, corr_top = NULL, top_marker = NULL,
     highlights_cat, highlights_label, highlights_sort
   )
   assoc <- fig_region_plot(
-    assoc_df, chr, x_min, x_max, build, prob, interactive, stack, thresh,
+    assoc_df, chrom, x_min, x_max, build, prob, interactive, stack, thresh,
     thresh_colour, x_labels, y_title, point_size, alpha, label_size,
     highlights_shape, highlights_nolabel_shape, highlights_colours,
     highlights_title, title, title_size, title_center, axis_text_size,
@@ -930,7 +930,7 @@ fig_region_stack <- function(data, traits, corr = NULL, corr_top = NULL,
   # Plot
 
   ## Genomic location
-  chr <- as.character(first(pull(data, chr)))
+  chrom <- as.character(first(pull(data, chr)))
   if (!is.null(x_min)) {
     x_min <- as.integer(x_min)
   } else {
@@ -953,11 +953,11 @@ fig_region_stack <- function(data, traits, corr = NULL, corr_top = NULL,
   ## Genes
   if (genebar == TRUE) {
     genes_df <- fig_gene_bar_data(
-      chr, x_min, x_max, build, genebar_ntracks,
+      chrom, x_min, x_max, build, genebar_ntracks,
       interactive, genebar_label_pos
     )
     gene_bar <- fig_gene_bar_plot(
-      genes_df$genes_df, chr, x_min, x_max, genes_df$ntracks, interactive,
+      genes_df$genes_df, chrom, x_min, x_max, genes_df$ntracks, interactive,
       genebar_label_size, genebar_line_size, axis_text_size, axis_title_size
     )
   }
@@ -1053,7 +1053,7 @@ fig_region_stack <- function(data, traits, corr = NULL, corr_top = NULL,
       highlights_cat, highlights_label, highlights_sort
     )
     assoc <- fig_region_plot(
-      assoc_df, chr, x_min, x_max, build, prob, interactive, stack, thresh,
+      assoc_df, chrom, x_min, x_max, build, prob, interactive, stack, thresh,
       thresh_colour, x_labels, y_title, point_size, alpha, label_size,
       highlights_shape, highlights_nolabel_shape, highlights_colours,
       highlights_title, bquote(italic(.(traits[i]))), title_size,
@@ -1454,7 +1454,7 @@ fig_region_data <- function(data, corr = NULL, corr_top = NULL,
 #'   `r2` (r-squared),
 #'   `r2_cat` (r-squared category)
 #'
-#' @param chr chromosome
+#' @param chrom chromosome
 #'
 #' @param x_min start of region
 #'
@@ -1521,7 +1521,7 @@ fig_region_data <- function(data, corr = NULL, corr_top = NULL,
 #'
 #' @noRd
 #' @md
-fig_region_plot <- function(df, chr, x_min, x_max, build = 38, prob = FALSE,
+fig_region_plot <- function(df, chrom, x_min, x_max, build = 38, prob = FALSE,
   interactive = FALSE, stack = FALSE, thresh = NULL, thresh_colour = "grey50",
   x_labels = FALSE, y_title = NULL, point_size = 3, alpha = 1, label_size = 3.5,
   highlights_shape = 22, highlights_nolabel_shape = 21,
@@ -1565,7 +1565,7 @@ fig_region_plot <- function(df, chr, x_min, x_max, build = 38, prob = FALSE,
   }
 
   ## Recombination rate
-  recomb_df <- fig_recombination_rate_data(chr, x_min, x_max, build)
+  recomb_df <- fig_recombination_rate_data(chrom, x_min, x_max, build)
   fig <- fig +
     geom_line(
       mapping = aes(x = x, y = y2 / (100 / ylim)),
@@ -1810,7 +1810,7 @@ fig_region_plot <- function(df, chr, x_min, x_max, build = 38, prob = FALSE,
   ## Axes labels
   if (x_labels == TRUE) {
     fig <- fig +
-      xlab(paste0("Position on chromosome ", chr))
+      xlab(paste0("Position on chromosome ", chrom))
   } else {
     fig <- fig +
       xlab(NULL)
@@ -1880,10 +1880,12 @@ fig_recombination_rate_data <- function(chrom, x_min, x_max, build = 38) {
   # Recombination data
   if (build == 37) {
     recomb <- geni.plots::recomb_b37 %>%
-      filter(chr == chrom & pos >= x_min & pos <= x_max)
+      as_tibble() %>%
+      filter(chr == !!chrom & pos >= !!x_min & pos <= !!x_max)
   } else if (build == 38) {
     recomb <- geni.plots::recomb_b38 %>%
-      filter(chr == chrom & pos >= x_min & pos <= x_max)
+      as_tibble() %>%
+      filter(chr == !!chrom & pos >= !!x_min & pos <= !!x_max)
   } else {
     stop("genome build has to be either 37 or 38")
   }
@@ -1936,10 +1938,12 @@ fig_gene_bar_data <- function(chrom, x_min, x_max, build = 38, ntracks = NULL,
   # Gene information
   if (build == 37) {
     genes <- geni.plots::genes_pos_b37 %>%
-      filter(chr == chrom & !(end < x_min) & !(start > x_max))
+      as_tibble() %>%
+      filter(chr == !!chrom & !(end < !!x_min) & !(start > !!x_max))
   } else if (build == 38) {
     genes <- geni.plots::genes_pos_b38 %>%
-      filter(chr == chrom & !(end < x_min) & !(start > x_max))
+      as_tibble() %>%
+      filter(chr == !!chrom & !(end < !!x_min) & !(start > !!x_max))
   } else {
     stop("genome build has to be either 37 or 38")
   }
@@ -2076,7 +2080,7 @@ fig_gene_bar_data <- function(chrom, x_min, x_max, build = 38, ntracks = NULL,
 #'
 #' @param df genes `data.frame`
 #'
-#' @param chr chromosome
+#' @param chrom chromosome
 #'
 #' @param x_min start of region
 #'
@@ -2102,7 +2106,7 @@ fig_gene_bar_data <- function(chrom, x_min, x_max, build = 38, ntracks = NULL,
 #'
 #' @noRd
 #' @md
-fig_gene_bar_plot <- function(df, chr, x_min, x_max, ntracks,
+fig_gene_bar_plot <- function(df, chrom, x_min, x_max, ntracks,
   interactive = FALSE, label_size = 4, line_size = 0.8,
   axis_text_size = 14, axis_title_size = 16) {
 
@@ -2116,24 +2120,28 @@ fig_gene_bar_plot <- function(df, chr, x_min, x_max, ntracks,
 
   ## Gene bar
   if (nrow(df) > 0 && ("id" %in% names(df))) {
-    if (interactive == TRUE) {
+    ggiraph_version <- c("0.8.9", "0.8.10")
+    if (
+      interactive == TRUE &&
+        !(packageVersion("ggiraph") %in% ggiraph_version)
+    ) {
       fig <- fig +
         geom_line_interactive(
           mapping = aes(group = id, tooltip = text, onclick = onclick),
-          colour = "blue4", size = line_size
+          colour = "blue4", linewidth = line_size
         )
     } else {
       fig <- fig +
         geom_line(
           mapping = aes(group = id),
-          colour = "blue4", size = line_size
+          colour = "blue4", linewidth = line_size
         )
     }
   }
 
   ## Axes
   fig <- fig +
-    xlab(paste0("Position on chromosome ", chr)) +
+    xlab(paste0("Position on chromosome ", chrom)) +
     scale_x_continuous(limits = c(x_min, x_max)) +
     scale_y_continuous(limits = c(-5, (8 * ntracks + 1)))
 
