@@ -1,60 +1,22 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
-  <url>
-    <loc>https://jrs95.github.io/geni.plots/404.html</loc>
-  </url>
-  <url>
-    <loc>https://jrs95.github.io/geni.plots/LICENSE-text.html</loc>
-  </url>
-  <url>
-    <loc>https://jrs95.github.io/geni.plots/articles/geni_plots.html</loc>
-  </url>
-  <url>
-    <loc>https://jrs95.github.io/geni.plots/articles/index.html</loc>
-  </url>
-  <url>
-    <loc>https://jrs95.github.io/geni.plots/authors.html</loc>
-  </url>
-  <url>
-    <loc>https://jrs95.github.io/geni.plots/index.html</loc>
-  </url>
-  <url>
-    <loc>https://jrs95.github.io/geni.plots/news/index.html</loc>
-  </url>
-  <url>
-    <loc>https://jrs95.github.io/geni.plots/reference/fig_manhattan.html</loc>
-  </url>
-  <url>
-    <loc>https://jrs95.github.io/geni.plots/reference/fig_phewas.html</loc>
-  </url>
-  <url>
-    <loc>https://jrs95.github.io/geni.plots/reference/fig_qq.html</loc>
-  </url>
-  <url>
-    <loc>https://jrs95.github.io/geni.plots/reference/fig_region.html</loc>
-  </url>
-  <url>
-    <loc>https://jrs95.github.io/geni.plots/reference/fig_region_save.html</loc>
-  </url>
-  <url>
-    <loc>https://jrs95.github.io/geni.plots/reference/fig_region_stack.html</loc>
-  </url>
-  <url>
-    <loc>https://jrs95.github.io/geni.plots/reference/geni.plots-package.html</loc>
-  </url>
-  <url>
-    <loc>https://jrs95.github.io/geni.plots/reference/geni_test_manhattan.html</loc>
-  </url>
-  <url>
-    <loc>https://jrs95.github.io/geni.plots/reference/geni_test_phewas.html</loc>
-  </url>
-  <url>
-    <loc>https://jrs95.github.io/geni.plots/reference/geni_test_region.html</loc>
-  </url>
-  <url>
-    <loc>https://jrs95.github.io/geni.plots/reference/geni_test_stack_region.html</loc>
-  </url>
-  <url>
-    <loc>https://jrs95.github.io/geni.plots/reference/index.html</loc>
-  </url>
+<urlset xmlns = 'http://www.sitemaps.org/schemas/sitemap/0.9'>
+<url><loc>https://jrs95.github.io/geni.plots/404.html</loc></url>
+<url><loc>https://jrs95.github.io/geni.plots/LICENSE-text.html</loc></url>
+<url><loc>https://jrs95.github.io/geni.plots/articles/geni_plots.html</loc></url>
+<url><loc>https://jrs95.github.io/geni.plots/articles/index.html</loc></url>
+<url><loc>https://jrs95.github.io/geni.plots/authors.html</loc></url>
+<url><loc>https://jrs95.github.io/geni.plots/index.html</loc></url>
+<url><loc>https://jrs95.github.io/geni.plots/news/index.html</loc></url>
+<url><loc>https://jrs95.github.io/geni.plots/reference/fig_manhattan.html</loc></url>
+<url><loc>https://jrs95.github.io/geni.plots/reference/fig_phewas.html</loc></url>
+<url><loc>https://jrs95.github.io/geni.plots/reference/fig_qq.html</loc></url>
+<url><loc>https://jrs95.github.io/geni.plots/reference/fig_region.html</loc></url>
+<url><loc>https://jrs95.github.io/geni.plots/reference/fig_region_save.html</loc></url>
+<url><loc>https://jrs95.github.io/geni.plots/reference/fig_region_stack.html</loc></url>
+<url><loc>https://jrs95.github.io/geni.plots/reference/geni.plots-package.html</loc></url>
+<url><loc>https://jrs95.github.io/geni.plots/reference/geni_test_manhattan.html</loc></url>
+<url><loc>https://jrs95.github.io/geni.plots/reference/geni_test_phewas.html</loc></url>
+<url><loc>https://jrs95.github.io/geni.plots/reference/geni_test_region.html</loc></url>
+<url><loc>https://jrs95.github.io/geni.plots/reference/geni_test_stack_region.html</loc></url>
+<url><loc>https://jrs95.github.io/geni.plots/reference/index.html</loc></url>
 </urlset>
+
