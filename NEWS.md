@@ -1,3 +1,7 @@
+# geni.plots 0.1.2
+
+* Updated `fig_region` to handle a known issue in [`ggiraph`](https://github.com/davidgohel/ggiraph/issues/299).  
+
 # geni.plots 0.1.1
 
 * Fixed plotting with inflation factor and sampling in `fig_qq`.  
